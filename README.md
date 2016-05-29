@@ -32,9 +32,9 @@ sudo apt-get install oracle-java8-set-default
 ;----------------
   mkdir -p $HOME/.lein/self-installs $HOME/.clojurians-org/bin
   #wget -c -O $HOME/.lein/self-installs/leiningen-2.6.1-standalone.jar https://github.com/technomancy/leiningen/releases/download/2.6.1/leiningen-2.6.1-standalone.zip
-  wget -c -O $HOME/.lein/self-installs/leiningen-2.6.1-standalone.jar https://github.com/clojurians-org/.lein/self-installs/leiningen-2.6.1-standalone.jar
-  #wget -c -O $HOME/.clojurians-org/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-  wget -c -O $HOME/.clojurians-org/bin/lein https://github.com/clojurians-org/.clojurians-org/bin/lein
+  wget -c -O $HOME/.lein/self-installs/leiningen-2.6.1-standalone.jar https://raw.githubusercontent.com/clojurians-org/offline-dev/master/.lein/self-installs/leiningen-2.6.1-standalone.jar
+  #wgehttps://github.com/clojurians-org/.lein/self-installs/leiningen-2.6.1-standalone.jart -c -O $HOME/.clojurians-org/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+  wget -c -O $HOME/.clojurians-org/bin/lein https://raw.githubusercontent.com/clojurians-org/offline-dev/master/.clojurians-org/bin/lein
   chmod +x $HOME/.clojurians-org/bin/lein
   export PATH=$HOME/.clojurians-org/bin:$PATH
 ;----------------
