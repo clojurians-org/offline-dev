@@ -1,11 +1,12 @@
 # clojure offline development guide
 ## the following component is included:
-- jdk-1.8    [http://www.oracle.com/technetwork/java/javase/downloads/index.html]
-- lein-2.6   [http://leiningen.org/]
-- emacs-24.5 [http://www.gnu.org/software/emacs/emacs.html]
-- prelude    [http://batsov.com/prelude]
-- cider      [https://cider.readthedocs.io/en/latest/installation/]
-- paredit    [http://mumble.net/~campbell/emacs/]
+- jdk-1.8     [http://www.oracle.com/technetwork/java/javase/downloads/index.html]
+- lein-2.6    [http://leiningen.org/]
+- emacs-24.5  [http://www.gnu.org/software/emacs/emacs.html]
+- prelude     [http://batsov.com/prelude]
+- cider       [https://cider.readthedocs.io/en/latest/installation/]
+- paredit     [http://mumble.net/~campbell/emacs/]
+- common jar  [refer to /.clojurians-org/workspaces/repo-download/project.clj]
 
 ## the current project include the component package already:
 - [lein-2.6] => lein + leiningen-2.6.1-standalone.jar
@@ -107,5 +108,19 @@
   curl -L https://git.io/epre | sh
   M-x: package-install cider
   M-x: package-install paredit
+;----------------
+
+;********************************
+;* clojure jar
+;********************************
+;----------------
+; bash
+;----------------
+  mkdir -p $HOME/.clojurians-org/workspaces
+  if [ ! -e $HOME/.clojurians-org/installer/offline-dev-master.zip ]; then wget -c -O $HOME/.clojurians-org/installer/offline-dev-master.zip https://codeload.github.com/clojurians-org/offline-dev/zip/master; fi
+  cd $HOME/.clojurians-org/installer && unzip offline-dev-master.zip
+  cp -r $HOME/.clojurians-org/installer/offline-dev-master/.clojurians-org $HOME
+  rm -rf $HOME/.clojurians-org/installer/offline-dev-master
+  cd $HOME/.clojurians-org/workspaces/repo-download && lein deps ;# =>  $HOME/.m2
 ;----------------
 ```
