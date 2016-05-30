@@ -1,14 +1,15 @@
 # clojure offline development guide  
 ## the following component is included:  
-- jdk-1.8
-- lein-2.6
-- emacs-24.5
-- prelude
-- cider
-- paredit
+- jdk-1.8    [http://www.oracle.com/technetwork/java/javase/downloads/index.html]
+- lein-2.6   [http://leiningen.org/]
+- emacs-24.5 [http://www.gnu.org/software/emacs/emacs.html]
+- prelude    [http://batsov.com/prelude]
+- cider      [https://cider.readthedocs.io/en/latest/installation/]
+- paredit    [http://mumble.net/~campbell/emacs/]
 
 ## the current project include the component package already:
-- lein-2.6: lein + leiningen-2.6.1-standalone.jar
+- [lein-2.6] => lein + leiningen-2.6.1-standalone.jar
+- [prelude cider paredit] => under .emacs.d directory
 
 ## see the follwing guide for more details:
 
@@ -43,11 +44,12 @@
 ;----------------
 ; lein[bash]
 ;----------------
-  mkdir -p $HOME/.lein/self-installs $HOME/.clojurians-org/bin
-  #wget -c -O $HOME/.lein/self-installs/leiningen-2.6.1-standalone.jar https://github.com/technomancy/leiningen/releases/download/2.6.1/leiningen-2.6.1-standalone.zip
-   wget -c -O $HOME/.lein/self-installs/leiningen-2.6.1-standalone.jar https://raw.githubusercontent.com/clojurians-org/offline-dev/master/.lein/self-installs/leiningen-2.6.1-standalone.jar
-  #wget -c -O $HOME/.clojurians-org/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-   wget -c -O $HOME/.clojurians-org/bin/lein https://raw.githubusercontent.com/clojurians-org/offline-dev/master/.clojurians-org/bin/lein
+  mkdir -p $HOME/.clojurians-org/{installer,bin} $HOME/.lein
+  if [ ! -e $HOME/.clojurians-org/installer/offline-dev-master.zip ]; then wget -c -O $HOME/.clojurians-org/installer/offline-dev-master.zip https://codeload.github.com/clojurians-org/offline-dev/zip/master; fi
+  cd $HOME/.clojurians-org/installer && unzip offline-dev-master.zip
+  cp -r $HOME/.clojurians-org/installer/offline-dev-master/.lein  $HOME
+  cp -r $HOME/.clojurians-org/installer/offline-dev-master/.clojurians-org $HOME
+  rm -rf $HOME/.clojurians-org/installer/offline-dev-master
   chmod +x $HOME/.clojurians-org/bin/lein
   export PATH=$HOME/.clojurians-org/bin:$PATH
 ;----------------
@@ -86,5 +88,24 @@
 ; mac os
 ;----------------
   brew install emacs
+;----------------
+
+;********************************
+;* emacs package[prelude cider paredit]
+;********************************
+;----------------
+; bash
+;----------------
+  mkdir -p $HOME/.clojurians-org/installer
+  if [ ! -e $HOME/.clojurians-org/installer/offline-dev-master.zip ]; then wget -c -O $HOME/.clojurians-org/installer/offline-dev-master.zip https://codeload.github.com/clojurians-org/offline-dev/zip/master; fi
+  cd $HOME/.clojurians-org/installer && unzip offline-dev-master.zip
+  cp -r $HOME/.clojurians-org/installer/offline-dev-master/.emacs.d $HOME
+  rm -rf $HOME/.clojurians-org/installer/offline-dev-master
+;----------------
+; emacs package
+;----------------
+ M-x: package-install prelude
+ M-x: package-install cider
+ M-x: package-install paredit
 ;----------------
 ```
