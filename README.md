@@ -1,5 +1,5 @@
-# clojure offline development guide  
-## the following component is included:  
+# clojure offline development guide
+## the following component is included:
 - jdk-1.8    [http://www.oracle.com/technetwork/java/javase/downloads/index.html]
 - lein-2.6   [http://leiningen.org/]
 - emacs-24.5 [http://www.gnu.org/software/emacs/emacs.html]
@@ -35,7 +35,7 @@
 ;----------------
 ; mac os
 ;----------------
-  brew cask install java 
+  brew cask install java
 ;----------------
 
 ;********************************
@@ -72,7 +72,7 @@
 ;----------------
   mkdir -p $HOME/.clojurians-org/{installer,bin,opt/emacs}
   wget -c -O $HOME/.clojurians-org/installer/emacs-24.5.tar.gz http://mirror.hust.edu.cn/gnu/emacs/emacs-24.5.tar.gz
-  cd $HOME/.clojurians-org/installer && tar -xvf $HOME/.clojurians-org/installer/emacs-24.5.tar.gz 
+  cd $HOME/.clojurians-org/installer && tar -xvf $HOME/.clojurians-org/installer/emacs-24.5.tar.gz
   cd $HOME/.clojurians-org/installer/emacs-24.5
   ./configure --prefix=$HOME/.clojurians-org/opt/emacs-24.5 --bindir=$HOME/.clojurians-org/bin --without-x
   make && make install
@@ -104,8 +104,8 @@
 ;----------------
 ; emacs package
 ;----------------
- M-x: package-install prelude
- M-x: package-install cider
- M-x: package-install paredit
+  curl -L https://git.io/epre | sh
+  M-x: package-install cider
+  M-x: package-install paredit
 ;----------------
 ```

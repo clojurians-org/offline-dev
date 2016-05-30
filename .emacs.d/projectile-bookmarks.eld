@@ -1,0 +1,1 @@
+("/vagrant/work/learn/hello-world/" "~/.emacs.d/")
