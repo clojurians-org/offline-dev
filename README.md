@@ -16,6 +16,12 @@
 
 ```sh
 ;********************************
+;* prepare
+;********************************
+  sudo apt-get install unzip
+  sudo apt-get install libncurses-dev
+
+;********************************
 ;* jdk 8
 ;********************************
 ;----------------
@@ -30,6 +36,7 @@
 ; ubuntu
 ;----------------
   sudo add-apt-repository ppa:webupd8team/java
+  sudo apt-get update
   sudo apt-get install oracle-java8-installer
   sudo apt-get install oracle-java8-set-default
 ;----------------
