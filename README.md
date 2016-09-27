@@ -79,7 +79,8 @@
 ; [bin].tar.gz
 ;----------------
   mkdir -p $HOME/.clojurians-org/{installer,bin,opt/emacs}
-  wget -c -O $HOME/.clojurians-org/installer/emacs-24.5.tar.gz http://mirror.hust.edu.cn/gnu/emacs/emacs-24.5.tar.gz
+  // wget -c -O $HOME/.clojurians-org/installer/emacs-24.5.tar.gz http://mirror.hust.edu.cn/gnu/emacs/emacs-24.5.tar.gz
+  wget -c -O $HOME/.clojurians-org/installer/emacs-24.5.tar.gz http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.gz
   cd $HOME/.clojurians-org/installer && tar -xvf $HOME/.clojurians-org/installer/emacs-24.5.tar.gz
   cd $HOME/.clojurians-org/installer/emacs-24.5
   ./configure --prefix=$HOME/.clojurians-org/opt/emacs-24.5 --bindir=$HOME/.clojurians-org/bin --without-x
